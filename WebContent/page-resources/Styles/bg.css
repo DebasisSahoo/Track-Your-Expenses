@@ -1,0 +1,47 @@
+ @CHARSET "ISO-8859-1";
+body {
+height: 100%;
+background:
+	linear-gradient(
+		cyan,
+		transparent
+	),
+	linear-gradient(
+	
+		yellow,
+		blue
+	),
+	linear-gradient(
+		45deg,
+		black,
+		transparent
+	);
+background-blend-mode: multiply;
+} 
+#register
+{
+	
+	float: right;
+	
+}
+#center
+{
+	margin-top:0%;
+	margin-left:20%;
+}
+#text
+{
+	font-size:40px;
+	color:white;
+}
+#btn
+{
+	margin-top:5%;
+	height: 70px;
+	width:300px;
+	border-radius:30px;
+	color:green;
+	font-size:40px;
+	background-color:black;
+}
+
