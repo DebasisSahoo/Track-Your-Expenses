@@ -18,6 +18,6 @@
 
 Hi welcomt to my page
 
-<a href="Register.jsp"> click here</a>
+<a href="pages/Register.jsp"> click here</a>
 </body>
 </html>
