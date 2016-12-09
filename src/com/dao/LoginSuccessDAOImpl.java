@@ -114,7 +114,7 @@ public class LoginSuccessDAOImpl implements LoginSuccessDAO{
 		Integer total_expenditure=0;
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		List<LoginSuccess> list=new ArrayList<LoginSuccess>();
+		//List<LoginSuccess> list=new ArrayList<LoginSuccess>();
 		Query q=session.createQuery("select c from LoginSuccessEntity c where dateofdata=? and uname=?");
 		q.setParameter(0, daily_date);
 		q.setParameter(1, uname);
