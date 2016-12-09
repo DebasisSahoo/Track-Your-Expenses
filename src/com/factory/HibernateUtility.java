@@ -1,6 +1,8 @@
 package com.factory;
 
 
+import javax.servlet.ServletContext;
+
 import org.hibernate.SessionFactory;
 
 import org.hibernate.cfg.Configuration;
@@ -16,6 +18,7 @@ public class HibernateUtility {
 		if (sessionFactory == null) {
 			try {
 				System.out.println(org.hibernate.Version.getVersionString());
+				//System.out.println(ServletContext.class.get);
 				// Step1 : Loading the configuration details from
 				// hibernate.cfg.xml
 				/*Configuration configuration = new Configuration()
