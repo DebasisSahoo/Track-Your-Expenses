@@ -37,9 +37,9 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Debasis/Downloads/Compressed/servlet-api.jar/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Debasis/Downloads/Compressed/jstl.jar/jstl.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Debasis/Downloads/Compressed/jsf-api-2.0.jar/jsf-api-2.0.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Debasis/Downloads/Compressed/jsf-api-2.0.jar/jsf-impl-2.0.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Debasis/Downloads/Compressed/servlet-api.jar/servlet-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Debasis/Downloads/Compressed/jstl.jar/jstl.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Debasis/Downloads/Compressed/jsf-api-2.0.jar/jsf-api-2.0.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Debasis/Downloads/Compressed/jsf-api-2.0.jar/jsf-impl-2.0.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
