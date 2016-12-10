@@ -18,6 +18,6 @@
 
 Welcome to my page
 
-<a href="pages/Register.jsp"> click here</a>
+<a href="TYE/WebContent/pages/Register.jsp"> click here</a>
 </body>
 </html>
