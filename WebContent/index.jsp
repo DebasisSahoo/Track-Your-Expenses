@@ -16,7 +16,7 @@
 
 <body>
 
-Hi welcomt to my page
+Welcome to my page
 
 <a href="pages/Register.jsp"> click here</a>
 </body>
