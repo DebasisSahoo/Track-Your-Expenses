@@ -70,11 +70,15 @@
 </dependency>
 
 <dependency>
-    <groupId>javax.faces</groupId>
-    <artifactId>jsf-api</artifactId>
-    <version>2.0</version>
-    <scope>provided</scope>
-</dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.2.2</version>
+		</dependency>
 <!-- https://mvnrepository.com/artifact/junit/junit -->
 <dependency>
     <groupId>junit</groupId>
@@ -104,12 +108,7 @@
    <version>1.0.2</version>
    <scope>provided</scope>
 </dependency>
-<dependency>
-    <groupId>com.sun.faces</groupId>
-    <artifactId>jsf-impl</artifactId>
-    <version>2.0.3-b05</version>
-    <scope>provided</scope>
-</dependency>
+
 <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>jstl</artifactId>
