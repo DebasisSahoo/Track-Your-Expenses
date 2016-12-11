@@ -122,6 +122,7 @@
      <groupId>org.hibernate</groupId>
      <artifactId>hibernate-core</artifactId>
      <version>3.3.2.GA</version>
+     <scope>provided</scope>
 </dependency>
 <dependency>
     <groupId>javax.servlet</groupId>
