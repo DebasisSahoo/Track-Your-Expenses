@@ -15,9 +15,12 @@
 </head>
 
 <body>
+<f:view>
 
 Welcome to my page
 
 <a href="pages/Register.jsp"> click here</a>
+
+</f:view>
 </body>
 </html>
