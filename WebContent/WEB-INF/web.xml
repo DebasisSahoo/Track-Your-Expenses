@@ -8,7 +8,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
-    <url-pattern>/faces/*</url-pattern>
+    <url-pattern>/tye1.herokuapp.com/*</url-pattern>
   </servlet-mapping>
  
   <!-- <welcome-file-list>
