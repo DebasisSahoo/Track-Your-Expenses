@@ -11,7 +11,10 @@
 
 <link rel="stylesheet" href="../page-resources/Styles/jquery-ui.css">
 <script src="../page-resources/scripts/jquery-3.1.0.js"></script>
-  <script src="../page-resources/scripts/jquery-ui.js"></script>
+   <!-- <script src="../page-resources/scripts/jquery-ui.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
 </head>
 
 <body>
