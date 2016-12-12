@@ -130,18 +130,42 @@
 </dependency>
 
 <dependency>
-     <groupId>org.hibernate</groupId>
-     <artifactId>hibernate-core</artifactId>
-     <version>3.3.2.GA</version>
-     <scope>provided</scope>
-</dependency>
-<dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>javax.servlet-api</artifactId>
        <version>3.0.1</version>
        <scope>provided</scope>
-    
   </dependency>
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.0.6.Final</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.hibernate.common/hibernate-commons-annotations -->
+<dependency>
+    <groupId>org.hibernate.common</groupId>
+    <artifactId>hibernate-commons-annotations</artifactId>
+    <version>5.0.1.Final</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
+<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
+<dependency>
+    <groupId>org.hibernate.javax.persistence</groupId>
+    <artifactId>hibernate-jpa-2.0-api</artifactId>
+    <version>1.0.0.Final</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-search-engine -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-search-engine</artifactId>
+    <version>5.5.2.Final</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-search-orm -->
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-search-orm</artifactId>
+    <version>5.5.2.Final</version>
+</dependency>
 
   </dependencies>
 </project>
