@@ -153,6 +153,7 @@
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
     <version>5.0.6.Final</version>
+    <scope>provided</scope>
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.hibernate.common/hibernate-commons-annotations -->
 <dependency>
