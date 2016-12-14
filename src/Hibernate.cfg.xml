@@ -2,7 +2,9 @@
 <!-- DTD -->
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
+
 	<session-factory>
+	
 		<!-- connection to the database -->
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
@@ -21,6 +23,7 @@
 
 
 		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		
 		<!-- Mapping file <mapping resource="Emp.hbm.xml"/> -->
 		<mapping class="com.entity.RegistrationEntity" />
 		<mapping class="com.entity.LoginSuccessEntity" />
