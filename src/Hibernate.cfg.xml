@@ -70,10 +70,11 @@ Hibernate SessionFactory
 
 <beans>
 <bean class="java.net.URI" id="dbUrl">
-    <constructor-arg value="#{systemEnvironment['postgres://ctkgwcizrufcmc:Z_2WoGmjHXEAlhxD6-0RESt7tn@ec2-23-21-227-73.compute-1.amazonaws.com:5432/d9ii5mmqf3bgkp']}"/>
+    <constructor-arg value="${DATABASE_URL}"/>
 </bean>
 
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+<property name="driverClassName" value="${database.driverClassName}"/>
     <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
     <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
     <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
