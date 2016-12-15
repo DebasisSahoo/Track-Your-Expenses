@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- DTD -->
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-<hibernate-configuration>
+<!-- <hibernate-configuration>
 
 	<session-factory>
 	
-		<!-- connection to the database -->
+		connection to the database
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
 		<property name="hibernate.connection.username">ctkgwcizrufcmc</property>
 		<property name="hibernate.connection.password">Z_2WoGmjHXEAlhxD6-0RESt7tn</property>
 		<property name="hibernate.connection.url">postgres://ctkgwcizrufcmc:Z_2WoGmjHXEAlhxD6-0RESt7tn@ec2-23-21-227-73.compute-1.amazonaws.com:5432/d9ii5mmqf3bgkp</property>
 
-		<!-- <property name="hibernate.connection.autocommit">false</property> -->
+		<property name="hibernate.connection.autocommit">false</property>
 
-		<!-- to display sql query generated while running the program -->
+		to display sql query generated while running the program
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		<property name="use_sql_comments">true</property>
@@ -24,8 +24,20 @@
 
 		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
 		
-		<!-- Mapping file <mapping resource="Emp.hbm.xml"/> -->
+		Mapping file <mapping resource="Emp.hbm.xml"/>
 		<mapping class="com.entity.RegistrationEntity" />
 		<mapping class="com.entity.LoginSuccessEntity" />
 	</session-factory>
-</hibernate-configuration>
+</hibernate-configuration> -->
+
+
+
+<bean class="java.net.URI" id="dbUrl">
+    <constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
+</bean>
+
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
+    <property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
+    <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
+</bean>
