@@ -67,11 +67,13 @@
     <artifactId>postgresql</artifactId>
     <version>9.4.1207</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 <dependency>
-  <groupId>org.postgresql</groupId>
-  <artifactId>postgresql</artifactId>
-  <version>9.3-1100-jdbc4</version>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.4-1200-jdbc41</version>
 </dependency>
+
 <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
 <dependency>
     <groupId>org.javassist</groupId>
