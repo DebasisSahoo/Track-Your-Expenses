@@ -41,9 +41,10 @@ public class LoginDAOImpl implements LoginDAO{
 		        try
 				{
 					 
-		        
+		        System.out.println("outside of prepare stmt");
 		        String sql="select uname,pwd from register where uname=?";
 		        PreparedStatement ps=connection.prepareStatement(sql);
+		        System.out.println(login.getUname());
 		        ps.setString(1, login.getUname());
 		        ResultSet rs=ps.executeQuery(sql);
 		        while(rs.next())
