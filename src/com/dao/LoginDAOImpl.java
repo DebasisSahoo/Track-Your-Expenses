@@ -37,11 +37,11 @@ public class LoginDAOImpl implements LoginDAO{
 		}*/
 		 Connection connection = JDBCConnection.jdbcConnection();
 		        
-		        Statement stmt = connection.createStatement();
+		       // Statement stmt = connection.createStatement();
 		        try
 				{
 					 
-		        System.out.println("outside of prepare stmt");
+		       // System.out.println("outside of prepare stmt");
 		        String sql="select uname,pwd from register where uname=?";
 		        PreparedStatement ps=connection.prepareStatement(sql);
 		        System.out.println(login.getUname());
@@ -61,11 +61,7 @@ public class LoginDAOImpl implements LoginDAO{
 			}
 		finally{
 		      //finally block used to close resources
-		      try{
-		         if(stmt!=null)
-		        	 connection.close();
-		      }catch(SQLException se){
-		      }// do nothing
+		      
 		      try{
 		         if(connection!=null)
 		        	 connection.close();
