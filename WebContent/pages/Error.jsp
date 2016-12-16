@@ -9,10 +9,11 @@
 </head>
 <body>
 <f:view>
+<h:form>
 <h1>Error Page . Check your credentials or 
 <h:commandLink value="Try again" action="Register"></h:commandLink></h1>
 
-
+</h:form>
 </f:view>
 </body>
 </html>

@@ -9,9 +9,11 @@
 </head>
 <body>
 <f:view>
+<h:form>
 <h1>You have Registered Successfully</h1>
 
 <h:commandLink value="Click here to login " action="Register"></h:commandLink>
+</h:form>
 </f:view>
 </body>
 </html>
