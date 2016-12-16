@@ -41,7 +41,7 @@ public class LoginDAOImpl implements LoginDAO{
 				{
 					 
 		        
-		        String sql="select uname,pwd from registration where uname='d'";
+		        String sql="select uname,pwd from register where uname='d'";
 		        ResultSet rs=stmt.executeQuery(sql);
 		        while(rs.next())
 		        {
