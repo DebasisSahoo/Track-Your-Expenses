@@ -40,6 +40,7 @@ public class RegistrationDAOImpl implements RegistrationDAO {
 			ps.setString(2, rto.getPassword());
 			ps.setString(3, rto.getEmail());
 			
+			
 			int i=ps.executeUpdate();
 			System.out.println(i+" row(s) inserted");
 			

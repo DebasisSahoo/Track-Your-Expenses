@@ -10,6 +10,8 @@
 <body>
 <f:view>
 <h1>You have Registered Successfully</h1>
+
+<h:commandLink value="Click here to login " action="Register"></h:commandLink>
 </f:view>
 </body>
 </html>
