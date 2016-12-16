@@ -46,7 +46,7 @@ public class LoginDAOImpl implements LoginDAO{
 		        PreparedStatement ps=connection.prepareStatement(sql);
 		        System.out.println(login.getUname());
 		        ps.setString(1, login.getUname());
-		        ResultSet rs=ps.executeQuery(sql);
+		        ResultSet rs=ps.executeQuery();
 		        while(rs.next())
 		        {
 		        	String name=rs.getString("uname");
