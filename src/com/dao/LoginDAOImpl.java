@@ -11,6 +11,7 @@ import com.bean.Login;
 
 import com.entity.RegistrationEntity;
 import com.factory.HibernateUtility;
+import com.factory.JDBCConnection;
 
 public class LoginDAOImpl implements LoginDAO{
 	//private SessionFactory sessionFactory = HibernateUtility.createSessionFactory();
@@ -34,15 +35,17 @@ public class LoginDAOImpl implements LoginDAO{
 			log.setUname(re.getUname());
 			log.setPassword(re.getPwd());
 		}*/
-		 Connection connection = getConnection();
+		 Connection connection = JDBCConnection.jdbcConnection();
 		        
 		        Statement stmt = connection.createStatement();
 		        try
 				{
 					 
 		        
-		        String sql="select uname,pwd from register where uname='d'";
-		        ResultSet rs=stmt.executeQuery(sql);
+		        String sql="select uname,pwd from register where uname=?";
+		        PreparedStatement ps=connection.prepareStatement(sql);
+		        ps.setString(1, login.getUname());
+		        ResultSet rs=ps.executeQuery(sql);
 		        while(rs.next())
 		        {
 		        	String name=rs.getString("uname");
@@ -74,7 +77,7 @@ public class LoginDAOImpl implements LoginDAO{
 		
 	}
 	
-	 private static Connection getConnection() throws URISyntaxException, SQLException {
+	/* private static Connection getConnection() throws URISyntaxException, SQLException {
 		 
 		 System.out.println("Inside Connection");
 	        URI dbUri = new URI(System.getenv("DATABASE_URL"));
@@ -86,6 +89,6 @@ public class LoginDAOImpl implements LoginDAO{
 		 
 
 	        return DriverManager.getConnection(dbUrl, username, password);
-	    }
+	    }*/
 
 }

@@ -9,12 +9,12 @@ import com.factory.HibernateUtility;
 
 public class RegistrationDAOImpl implements RegistrationDAO {
 
-	private SessionFactory sessionFactory = HibernateUtility.createSessionFactory();
+	//private SessionFactory sessionFactory = HibernateUtility.createSessionFactory();
 	@Override
 	public String registerNewMember(Registration rto) {
 		// TODO Auto-generated method stub
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
+		//Session session = sessionFactory.openSession();
+		//session.beginTransaction();
 		try
 		{
 			System.out.println();
@@ -22,9 +22,9 @@ public class RegistrationDAOImpl implements RegistrationDAO {
 			re.setUname(rto.getUname());
 			re.setEmail(rto.getEmail());
 			re.setPwd(rto.getPassword());
-			session.save(re);
+			/*session.save(re);
 			session.flush();
-			session.close(); 
+			session.close(); */
 			return "mon";
 		}
 		catch(Exception e)
