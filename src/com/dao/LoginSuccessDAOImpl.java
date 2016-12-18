@@ -11,15 +11,18 @@ import org.hibernate.SessionFactory;
 import com.bean.LoginSuccess;
 import com.entity.LoginSuccessEntity;
 import com.factory.HibernateUtility;
+import com.factory.JDBCConnection;
+import java.sql.*;
 
 public class LoginSuccessDAOImpl implements LoginSuccessDAO{
 
-	private SessionFactory sessionFactory = HibernateUtility.createSessionFactory();
+	//private SessionFactory sessionFactory = HibernateUtility.createSessionFactory();
 	@Override
 	public String calculate(LoginSuccess loginSuccess) throws Exception {
 		// TODO Auto-generated method stub
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
+		//Session session = sessionFactory.openSession();
+		//session.beginTransaction();
+		Connection connection=JDBCConnection.jdbcConnection();
 		try
 		{
 			/*System.out.println();
@@ -41,7 +44,7 @@ public class LoginSuccessDAOImpl implements LoginSuccessDAO{
 			loginSuccess.setId(lse.getId());*/
 			
 			
-			LoginSuccessEntity lse1=new LoginSuccessEntity();
+			/*LoginSuccessEntity lse1=new LoginSuccessEntity();
 			Query q=session.createQuery("select c from LoginSuccessEntity c where dateofdata=? and uname=?");
 			q.setParameter(0, loginSuccess.getDateOfData());
 			q.setParameter(1, loginSuccess.getUname());
@@ -95,8 +98,40 @@ public class LoginSuccessDAOImpl implements LoginSuccessDAO{
 				
 			}
 			session.flush();
-			session.close(); 
+			session.close(); */
+			
+			String sql="select * from data where dateofdata=? and uname=?";
+			PreparedStatement ps=connection.prepareStatement(sql);
+	        System.out.println(loginSuccess.getDateOfData());
+	        ps.setDate(2, Date.valueOf(loginSuccess.getDateOfData().toString()));
+	        ps.setString(2, loginSuccess.getUname());
+	        ResultSet rs=ps.executeQuery();
+	        
+	        if(rs==null)
+	        {
+	        	String sql1="insert into data values(?,?,?,?,?,?,?,?,?,?,?)";
+	        	PreparedStatement ps1=connection.prepareStatement(sql);
+				ps.setInt(1, loginSuccess.getBook());
+				ps.setInt(2, loginSuccess.getBus());
+				ps.setInt(3, loginSuccess.getHome());
+				ps.setInt(4, loginSuccess.getShopping());
+				ps.setInt(5, loginSuccess.getFood());
+				ps.setInt(6, loginSuccess.getParty());
+				ps.setInt(7, loginSuccess.getOther());
+				ps.setInt(8, loginSuccess.getMobile());
+				ps.setInt(9, loginSuccess.getWifi());
+				ps.setDate(10, Date.valueOf(loginSuccess.getDateOfData().toString()));
+				//ps.setInt(11, loginSuccess.getId());
+				ps.setString(11, loginSuccess.getUname());
+				
+				int i=ps.executeUpdate();
+				System.out.println(i+" row(s) inserted");
+				
+	        	
+	        }
+			
 			return "mon";
+			
 		}
 		catch(Exception e)
 		{
@@ -107,10 +142,10 @@ public class LoginSuccessDAOImpl implements LoginSuccessDAO{
 		
 		
 	}
-	@Override
+	//@Override
 	public Integer daily_calculate(Calendar daily_date,String uname) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("uname :"+uname);
+		/*System.out.println("uname :"+uname);
 		Integer total_expenditure=0;
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -126,12 +161,13 @@ public class LoginSuccessDAOImpl implements LoginSuccessDAO{
 					lse.getParty()+lse.getWifi()+lse.getShopping();
 		}
 		
-		return total_expenditure;
+		return total_expenditure;*/
+		return null ;
 	}
 	@Override
 	public Integer monthly_calculate(Calendar start_date, Calendar end_date,String uname) throws Exception {
 		// TODO Auto-generated method stub
-		Integer total_expenditure=0;
+	/*	Integer total_expenditure=0;
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		List<LoginSuccess> list=new ArrayList<LoginSuccess>();
@@ -152,6 +188,8 @@ public class LoginSuccessDAOImpl implements LoginSuccessDAO{
 		System.out.println("total expenditure :"+total_expenditure);
 		
 		return total_expenditure;
+	*/
+	return null;
 	}
 
 }
