@@ -16,7 +16,11 @@ import com.factory.Factory;
 @RequestScoped
 public class LoginSuccessBean {
 	
-	private Integer id;
+	//private Integer id;
+	static private Integer id=1000;
+	
+		
+	
 	private String uname;
 	private Integer mobile;
 	private Integer wifi;
@@ -160,6 +164,7 @@ public class LoginSuccessBean {
 		ls.setParty(party);
 		ls.setShopping(shopping);
 		ls.setWifi(wifi);
+		
 		
 		
 		try {
