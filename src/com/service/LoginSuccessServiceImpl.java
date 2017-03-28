@@ -3,7 +3,7 @@ package com.service;
 import java.util.Calendar;
 
 import com.bean.LoginSuccess;
-import com.factory.Factory;
+import com.factory.ClassFactory;
 
 public class LoginSuccessServiceImpl implements LoginSuccessService{
 
@@ -12,19 +12,19 @@ public class LoginSuccessServiceImpl implements LoginSuccessService{
 		// TODO Auto-generated method stub
 		
 		
-		return Factory.createLoginSuccessDAO().calculate(loginSuccess);
+		return ClassFactory.createLoginSuccessDAO().calculate(loginSuccess);
 	}
 
 	@Override
 	public Integer daily_calculate(Calendar daily_date,String uname) throws Exception {
 		// TODO Auto-generated method stub
-		return Factory.createLoginSuccessDAO().daily_calculate(daily_date,uname);
+		return ClassFactory.createLoginSuccessDAO().daily_calculate(daily_date,uname);
 	}
 
 	@Override
 	public Integer monthly_calculate(Calendar start_date, Calendar end_date,String uname) throws Exception {
 		// TODO Auto-generated method stub
-		return Factory.createLoginSuccessDAO().monthly_calculate(start_date, end_date,uname);
+		return ClassFactory.createLoginSuccessDAO().monthly_calculate(start_date, end_date,uname);
 	}
 
 

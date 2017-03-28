@@ -13,7 +13,7 @@ import com.service.LoginSuccessServiceImpl;
 import com.service.RegistrationService;
 import com.service.RegistrationServiceImpl;
 
-public class Factory {
+public class ClassFactory {
 
 	public static RegistrationService createRegistrationService()
 	{

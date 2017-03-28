@@ -1,7 +1,7 @@
 package com.service;
 
 import com.bean.Registration;
-import com.factory.Factory;
+import com.factory.ClassFactory;
 
 public class RegistrationServiceImpl implements RegistrationService{
 	@Override
@@ -9,7 +9,7 @@ public class RegistrationServiceImpl implements RegistrationService{
 		// TODO Auto-generated method stub
 		try
 		{
-			return Factory.createRegistrationDAO().registerNewMember(rto);
+			return ClassFactory.createRegistrationDAO().registerNewMember(rto);
 		}
 		catch(Exception e)
 		{

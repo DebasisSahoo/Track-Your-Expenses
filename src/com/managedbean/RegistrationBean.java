@@ -6,7 +6,7 @@ import javax.faces.bean.RequestScoped;
 
 
 import com.bean.Registration;
-import com.factory.Factory;
+import com.factory.ClassFactory;
 
 @ManagedBean
 @RequestScoped
@@ -46,7 +46,7 @@ public class RegistrationBean {
 			rto.setEmail(email);
 			rto.setPassword(password);
 			
-			this.message =Factory.createRegistrationService().registerNewMember(rto);
+			this.message = ClassFactory.createRegistrationService().registerNewMember(rto);
 			System.out.println("he");
 			System.out.println(message);
 			return message;

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import com.bean.Login;
 
-import com.factory.Factory;
+import com.factory.ClassFactory;
 
 @ManagedBean
 @SessionScoped
@@ -42,7 +42,7 @@ public class LoginBean {
 		 login.setPassword(password);
 		 
 		 try {
-			Login s=Factory.createLoginService().authorize(login);
+			Login s= ClassFactory.createLoginService().authorize(login);
 			
 			if(s.getPassword()==null)
 			{

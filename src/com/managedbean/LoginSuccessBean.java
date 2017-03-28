@@ -10,7 +10,7 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 
 import com.bean.LoginSuccess;
-import com.factory.Factory;
+import com.factory.ClassFactory;
 
 @ManagedBean
 @RequestScoped
@@ -168,7 +168,7 @@ public class LoginSuccessBean {
 		
 		
 		try {
-			this.message=Factory.createLoginSuccessService().calculate(ls);
+			this.message= ClassFactory.createLoginSuccessService().calculate(ls);
 			if(this.message!=null)
 			{
 				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("sucess"));
@@ -196,7 +196,7 @@ public class LoginSuccessBean {
 				
 				System.out.println("uname in lsbean :"+this.uname);
 			
-				daily_count=Factory.createLoginSuccessService().daily_calculate(daily_date,uname);
+				daily_count= ClassFactory.createLoginSuccessService().daily_calculate(daily_date,uname);
 				daily_message="Your total Expenditure of "+daily_date+" is "+daily_count;
 				
 				}
@@ -229,7 +229,7 @@ public class LoginSuccessBean {
 				Calendar firstDay=new GregorianCalendar(year, month, Calendar.DAY_OF_MONTH);
 				firstDay.set(firstDay.DAY_OF_MONTH, firstDay.getActualMinimum(firstDay.DAY_OF_MONTH));
 				
-				monthly_count=Factory.createLoginSuccessService().monthly_calculate(firstDay, lastDay,uname);
+				monthly_count= ClassFactory.createLoginSuccessService().monthly_calculate(firstDay, lastDay,uname);
 				
 				
 				} 
