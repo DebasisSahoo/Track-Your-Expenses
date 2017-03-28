@@ -3,6 +3,7 @@ package com.dao;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.*;
+import java.util.logging.Logger;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,6 +15,7 @@ import com.factory.HibernateUtility;
 import com.factory.JDBCConnection;
 
 public class LoginDAOImpl implements LoginDAO{
+	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 	//private SessionFactory sessionFactory = HibernateUtility.createSessionFactory();
 	@Override
 	public Login authorize(Login login) throws Exception {
@@ -28,8 +30,6 @@ public class LoginDAOImpl implements LoginDAO{
 		{
 			
 			RegistrationEntity re=null;
-			System.out.println("Hii "+login.getUname());
-			
 			re=(RegistrationEntity)session.get(RegistrationEntity.class,login.getUname());
 			System.out.println("REg. Entity"+re.getEmail());
 			log.setUname(re.getUname());
@@ -44,7 +44,7 @@ public class LoginDAOImpl implements LoginDAO{
 		       // System.out.println("outside of prepare stmt");
 		        String sql="select uname,pwd from register where uname=?";
 		        PreparedStatement ps=connection.prepareStatement(sql);
-		        System.out.println(login.getUname());
+		        logger.info(login.getUname());
 		        ps.setString(1, login.getUname());
 		        ResultSet rs=ps.executeQuery();
 		        while(rs.next())
@@ -56,8 +56,7 @@ public class LoginDAOImpl implements LoginDAO{
 		        }
 		}
 		 catch (Exception e) {
-				// TODO Auto-generated catch block
-				System.out.println(e.getMessage());
+				logger.severe(e.getMessage());
 			}
 		finally{
 		      //finally block used to close resources

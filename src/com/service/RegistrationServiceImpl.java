@@ -3,7 +3,11 @@ package com.service;
 import com.bean.Registration;
 import com.factory.ClassFactory;
 
+import java.util.logging.Logger;
+
 public class RegistrationServiceImpl implements RegistrationService{
+	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
 	@Override
 	public String registerNewMember(Registration rto) throws Exception {
 		// TODO Auto-generated method stub
@@ -13,7 +17,7 @@ public class RegistrationServiceImpl implements RegistrationService{
 		}
 		catch(Exception e)
 		{
-			System.out.println(e.getMessage());
+			logger.severe(e.getMessage());
 			throw e;
 		}
 	}

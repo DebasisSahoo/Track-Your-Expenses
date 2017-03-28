@@ -4,7 +4,6 @@ import com.dao.LoginDAO;
 import com.dao.LoginSuccessDAO;
 import com.dao.RegistrationDAO;
 import com.factory.ClassFactory;
-import com.factory.JDBCConnection;
 import com.service.LoginService;
 import com.service.LoginSuccessService;
 import com.service.RegistrationService;
@@ -12,7 +11,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.net.URISyntaxException;
-import java.sql.Connection;
 import java.sql.SQLException;
 
 /**

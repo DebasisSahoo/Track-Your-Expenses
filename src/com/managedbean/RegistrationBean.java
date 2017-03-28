@@ -8,9 +8,13 @@ import javax.faces.bean.RequestScoped;
 import com.bean.Registration;
 import com.factory.ClassFactory;
 
+import java.util.logging.Logger;
+
 @ManagedBean
 @RequestScoped
 public class RegistrationBean {
+	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
 	private String uname;
 	private String email;
 	private String password;
@@ -40,20 +44,18 @@ public class RegistrationBean {
 	{
 		try
 		{
-			System.out.println("hehe");
 			Registration rto=new Registration();
 			rto.setUname(uname);
 			rto.setEmail(email);
 			rto.setPassword(password);
 			
 			this.message = ClassFactory.createRegistrationService().registerNewMember(rto);
-			System.out.println("he");
-			System.out.println(message);
+			logger.info(message);
 			return message;
 		}
 		catch(Exception e)
 		{
-			System.out.println(e.getMessage());
+			logger.severe(e.getMessage());
 			return null;
 		}
 		
