@@ -2,6 +2,7 @@ package com.service;
 
 import com.bean.Registration;
 import com.factory.ClassFactory;
+import src.com.exception.ExceptionUtility;
 
 import java.util.logging.Logger;
 
@@ -17,7 +18,7 @@ public class RegistrationServiceImpl implements RegistrationService{
 		}
 		catch(Exception e)
 		{
-			logger.severe(e.getMessage());
+			logger.severe(ExceptionUtility.getStacktrace(e));
 			throw e;
 		}
 	}
