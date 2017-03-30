@@ -5,6 +5,16 @@ package com.bean;
 public class Registration {
 
 	private String uname;
+
+	public Registration() {
+	}
+
+	public Registration(String uname, String email, String password) {
+		this.uname = uname;
+		this.email = email;
+		this.password = password;
+	}
+
 	private String email;
 	private String password;
 	public String getUname() {
